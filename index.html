@@ -1,0 +1,287 @@
+<title>G and J Lazy P</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rye&family=Bitter:wght@500;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Oswald:wght@500&display=swap">
+<style>
+/* Layout: photo-led ranch page. Full-bleed hero of the arena yard, then plank-banded sections
+   (board-and-batten texture) alternating with the barn's own green-roof and bare-cottonwood palette. */
+:root {
+  /* Single deliberate look: dark weathered barn boards behind everything, cream "painted sign" panels for detail. */
+  --wood: #4a3626;          /* fallback under the board texture */
+  --ground: #f1e6d0;        /* painted sign cream */
+  --ink: #2b2118;           /* text on cream */
+  --muted: #6b5a49;
+  --on-wood: #f4ead8;       /* text on bare boards */
+  --on-wood-muted: #d9c7aa;
+  --barn: #2f5a45;
+  --barn-ink: #f3ece0;
+  --hay: #e3a948;
+  --rule: #cdbca2;
+  --placeholder-bg: #f7e3b8;
+  --placeholder-fg: #7a4b05;
+  --display: "Rye", "Bitter", Georgia, serif;
+  --head: "Bitter", Georgia, serif;
+  --body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --label: "Oswald", "Arial Narrow", sans-serif;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--wood) url("img/wood.jpg") center top / 900px auto repeat; color: var(--on-wood); font: 400 1.0625rem/1.65 var(--body); }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--hay); outline-offset: 3px; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.band { padding-block: clamp(3rem, 7vw, 5.5rem); }
+.band { text-shadow: 0 1px 2px rgb(0 0 0 / 0.45); }
+.band p { color: var(--on-wood); }
+.planks { background: rgb(20 12 6 / 0.28); border-block: 3px solid rgb(20 12 6 / 0.55); }
+.green { background: linear-gradient(rgb(34 70 52 / 0.86), rgb(34 70 52 / 0.86)), var(--wood) url("img/wood.jpg") center / 900px auto repeat; color: var(--barn-ink); border-block: 3px solid rgb(20 12 6 / 0.55); }
+.sign { background: var(--ground); color: var(--ink); text-shadow: none; border-radius: 3px; box-shadow: 0 6px 18px rgb(0 0 0 / 0.35), inset 0 0 0 2px rgb(90 60 30 / 0.25); }
+.sign p, .sign td, .sign dd { color: var(--ink); }
+
+.eyebrow { font: 500 0.8rem/1 var(--label); letter-spacing: 0.16em; text-transform: uppercase; color: var(--hay); margin: 0 0 0.9rem; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+h2 { font: 800 clamp(1.8rem, 3.6vw, 2.6rem)/1.15 var(--head); margin-bottom: 1rem; }
+h3 { font: 700 1.3rem/1.25 var(--head); margin-bottom: 0.4rem; }
+p { margin: 0 0 1rem; max-width: 65ch; }
+
+.ph { text-shadow: none; background: var(--placeholder-bg); color: var(--placeholder-fg); padding: 0 0.3em; border-radius: 3px; font-style: italic; }
+
+/* nav */
+.top { position: absolute; inset: 0 0 auto; z-index: 2; padding-top: env(safe-area-inset-top, 0px); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.1rem; flex-wrap: wrap; }
+.mark { font: 400 1.35rem/1 var(--display); color: #fff8ec; text-decoration: none; text-shadow: 0 1px 6px rgb(0 0 0 / 0.5); }
+.top nav { display: flex; gap: 1.4rem; flex-wrap: wrap; }
+.top nav a { font: 500 0.85rem/1 var(--label); letter-spacing: 0.14em; text-transform: uppercase; color: #fff8ec; text-decoration: none; text-shadow: 0 1px 6px rgb(0 0 0 / 0.6); }
+.top nav a:hover { color: #f2c46d; }
+
+/* hero */
+.hero { position: relative; min-height: min(86vh, 760px); display: grid; align-items: end; color: #fff8ec; overflow: hidden; background: #3b3328; }
+.hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgb(20 14 8 / 0.55) 0%, rgb(20 14 8 / 0) 28%, rgb(20 14 8 / 0.1) 50%, rgb(20 14 8 / 0.82) 100%); }
+.hero .wrap { position: relative; z-index: 1; padding-block: 8rem 3.5rem; width: 100%; }
+.hero .eyebrow { color: #f2c46d; }
+.hero h1 { font: 400 clamp(2.8rem, 8vw, 6rem)/0.95 var(--display); letter-spacing: 0.01em; margin-bottom: 1.1rem; }
+.hero .lede { font-size: clamp(1.1rem, 2vw, 1.3rem); max-width: 38ch; margin-bottom: 1.8rem; }
+.btns { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+.btn { display: inline-block; font: 500 0.9rem/1 var(--label); letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 0.95rem 1.4rem; border: 2px solid currentColor; border-radius: 2px; }
+.btn.solid { background: var(--hay); border-color: var(--hay); color: #24180b; }
+.btn:hover { filter: brightness(1.08); }
+
+/* about */
+.about { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.about > * { min-width: 0; }
+.tintype { background: #fffaf1; padding: 12px 12px 2.4rem; box-shadow: 0 10px 30px rgb(40 25 10 / 0.18); transform: rotate(1.6deg); max-width: 420px; justify-self: center; position: relative; }
+.tintype img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.tintype figcaption { position: absolute; left: 0; right: 0; bottom: 0.7rem; text-align: center; font: italic 400 0.95rem/1 var(--body); color: #5b4a38; }
+.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.6rem; padding-top: 1.4rem; border-top: 2px dashed rgb(244 234 216 / 0.4); }
+.facts dt { font: 500 0.75rem/1 var(--label); letter-spacing: 0.14em; text-transform: uppercase; color: var(--on-wood-muted); margin-bottom: 0.4rem; }
+.facts dd { margin: 0; font: 700 1.1rem/1.3 var(--head); }
+
+/* services */
+.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-top: 2rem; }
+.svc { padding: 1.8rem 1.5rem; display: flex; flex-direction: column; gap: 0.3rem; }
+.svc .brand { font: 400 1.6rem/1 var(--display); color: var(--barn); margin-bottom: 0.6rem; }
+.sign.svc p { margin: 0; color: var(--muted); }
+
+/* facility */
+.facility { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.facility > * { min-width: 0; }
+.facility img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border: 6px solid color-mix(in srgb, var(--barn-ink) 85%, transparent); }
+.green .eyebrow { color: #f2c46d; }
+.checks { list-style: none; padding: 0; margin: 1.2rem 0 0; display: grid; gap: 0.7rem; }
+.checks li { padding-left: 1.6rem; position: relative; }
+.checks li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 0.7rem; height: 0.7rem; border: 2px solid #f2c46d; transform: rotate(45deg); }
+
+/* rates */
+.rates-wrap { overflow-x: auto; margin-top: 1.6rem; padding: 0.6rem 1.2rem; }
+table { width: 100%; border-collapse: collapse; min-width: 480px; }
+th, td { text-align: left; padding: 0.9rem 0.8rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font: 500 0.78rem/1 var(--label); letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); border-bottom: 2px solid var(--ink); }
+td:first-child { font: 700 1.05rem/1.3 var(--head); }
+tr.group th { padding-top: 2rem; }
+td.price { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.band .note { font-size: 0.95rem; color: var(--on-wood-muted); margin-top: 1rem; }
+
+/* visit */
+.visit { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); }
+.visit > * { min-width: 0; }
+.card { padding: 1.6rem; }
+.card dl { margin: 0; display: grid; gap: 1.1rem; }
+.card dt { font: 500 0.75rem/1 var(--label); letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.35rem; }
+.card dd { margin: 0; font-size: 1.1rem; }
+.hours { width: 100%; min-width: 0; }
+.hours td, .hours th { padding: 0.5rem 0; }
+.hours td:first-child { font: 400 1rem/1.4 var(--body); }
+
+footer { padding-block: 2.2rem; background: rgb(20 12 6 / 0.55); font-size: 0.95rem; color: var(--on-wood-muted); }
+footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; align-items: center; }
+footer .mark { color: var(--on-wood); text-shadow: none; font-size: 1.15rem; }
+
+@media (max-width: 760px) {
+  .about, .facility, .visit { grid-template-columns: 1fr; }
+  .facts { grid-template-columns: 1fr 1fr; }
+  .top nav { gap: 1rem; }
+  .tintype { transform: none; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero h1, .hero .lede, .hero .btns { animation: rise 0.8s ease-out both; }
+  .hero .lede { animation-delay: 0.12s; }
+  .hero .btns { animation-delay: 0.24s; }
+  @keyframes rise { from { transform: translateY(14px); } to { transform: none; } }
+}
+
+/* award strip */
+.award { background: rgb(20 12 6 / 0.6); color: var(--on-wood); padding-block: 1rem; font-size: 0.98rem; }
+.award .wrap { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+.award-badge { font: 500 0.82rem/1 var(--label); letter-spacing: 0.14em; text-transform: uppercase; background: var(--hay); color: #24180b; padding: 0.55rem 0.8rem; border-radius: 2px; }
+.award span:last-child { flex: 1 1 320px; min-width: 0; }
+
+/* family */
+.family { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.2rem; margin-top: 2.5rem; }
+.person { padding: 1.4rem 1.3rem; }
+.person p { margin: 0; font-size: 0.98rem; }
+.visit .btn { margin-top: 0.4rem; text-shadow: none; }
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#home">G and J Lazy P</a>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#facilities">Facilities</a>
+      <a href="#visit">Visit</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <img src="img/arena-front.jpg" alt="The G and J Lazy P office and indoor arena under a blue sky, with a horse trailer parked in the dirt yard">
+    <div class="wrap">
+      <p class="eyebrow">Arvada, Colorado &middot; Family owned since 1977</p>
+      <h1>G and J Lazy P</h1>
+      <p class="lede">Boarding stables, lessons and training, and AQHA performance horses, set back among the cottonwoods in the middle of Arvada.</p>
+      <div class="btns">
+        <a class="btn solid" href="#visit">Schedule a visit</a>
+        <a class="btn" href="#facilities">See the facilities</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="award">
+    <div class="wrap">
+      <span class="award-badge">Best of Arvada 2020</span>
+      <span>Named a Best of Arvada horse business by the Arvada Award Program, which recognizes local companies for service to their customers and community.</span>
+    </div>
+  </div>
+
+  <section class="band planks" id="about">
+    <div class="wrap about">
+      <div>
+        <p class="eyebrow">The Pratts</p>
+        <h2>Raising horses in Arvada since 1977</h2>
+        <p>George, Jill, Art and Kristina Pratt have lived on a small acreage in Arvada, Colorado since 1977. Over the years they have bred and raised top AQHA horses, including Hottroddin Novel Te (AQHA ROM in Reining and 1991 NRHA Limited Derby winner in St. Paul, Minnesota) and Sundown Sir Dawn (AQHA Champion in Hunter Under Saddle).</p>
+        <dl class="facts">
+          <div><dt>Established</dt><dd>1977</dd></div>
+          <div><dt>Stalls</dt><dd>29 box stalls</dd></div>
+          <div><dt>Indoor arena</dt><dd>82 &times; 120 ft</dd></div>
+        </dl>
+      </div>
+      <figure class="tintype">
+        <img src="img/cottonwood-lane.jpg" alt="A road lined with golden cottonwood trees in autumn">
+        <figcaption>The lane in October</figcaption>
+      </figure>
+    </div>
+    <div class="wrap family">
+      <div class="person sign"><h3>George</h3><p>George grew up on a farm in Ohio. He's the one who holds the place together, from fixing machinery and fences to feeding and caring for the horses.</p></div>
+      <div class="person sign"><h3>Jill</h3><p>Jill is from a small town in Nebraska and has been around horses most of her life. She co-founded Colorado Horse Rescue, manages the office, and helps with feeding and care.</p></div>
+      <div class="person sign"><h3>Kristina</h3><p>Kris handles the horses, training and lessons, and owns KP Quarter Horses. She has coached several youth riders to points in the AQHA show ring. Her specialty is Showmanship and Horsemanship.</p></div>
+      <div class="person sign"><h3>Arthur</h3><p>Art has lived in Arvada most of his life. After serving in the Army and the reserves, including time in Iraq, he came home to help George keep the place running.</p></div>
+    </div>
+  </section>
+
+  <section class="band" id="services">
+    <div class="wrap">
+      <p class="eyebrow">What we offer</p>
+      <h2>Services</h2>
+      <div class="services">
+        <div class="svc sign"><span class="brand" aria-hidden="true">&#x2229;</span><h3>Boarding</h3><p>Heated box stalls, or individual pens with shelter. Boarding forms are available from the office.</p></div>
+        <div class="svc sign"><span class="brand" aria-hidden="true">&#x2229;</span><h3>Lessons</h3><p>Lessons with Kristina Pratt, with a focus on Showmanship and Horsemanship for youth and AQHA riders.</p></div>
+        <div class="svc sign"><span class="brand" aria-hidden="true">&#x2229;</span><h3>Training</h3><p>Horse training in the indoor arena, outdoor arena and round pen, year round.</p></div>
+        <div class="svc sign"><span class="brand" aria-hidden="true">&#x2229;</span><h3>AQHA horses</h3><p>Top breeding of AQHA performance horses. Horses for sale through KP Quarter Horses.</p></div>
+      </div>
+      <p class="note">Also on site: a tack shop with Sale Barn classifieds for boarders, and overnight stabling for the Colorado Stock Horse shows.</p>
+    </div>
+  </section>
+
+  <section class="band green" id="facilities">
+    <div class="wrap facility">
+      <img src="img/arena-back.jpg" alt="The back of the indoor arena behind a row of bare cottonwood trees, with a horse at the stable on the left">
+      <div>
+        <p class="eyebrow">The facility</p>
+        <h2>A quiet barn in the middle of the city</h2>
+        <p>The G and J Lazy P is set back in a peaceful spot surrounded by trees, with easy access from 74th and Indiana.</p>
+        <ul class="checks">
+          <li>Heated 19-stall barn with 12 &times; 12 box stalls</li>
+          <li>10-stall barn added in 2008, with its own wash rack and tack room</li>
+          <li>Individual pens with shelter, one horse per pen, plus a separate tack area and outdoor wash rack</li>
+          <li>Indoor arena, 82 &times; 120 ft, evenly lit with no shadows, sand and rubber footing worked every day</li>
+          <li>Outdoor arena, well-sanded round pen and hot walker</li>
+          <li>Access to the Indiana Equestrian Center, 50 acres of open space and trails</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band planks" id="rates">
+    <div class="wrap">
+      <p class="eyebrow">Boarding and lessons</p>
+      <h2>Rates</h2>
+      <div class="rates-wrap sign">
+        <table>
+          <thead><tr><th scope="col">Boarding</th><th scope="col">Details</th><th scope="col">Price</th></tr></thead>
+          <tbody>
+            <tr><td>Run and shelter</td><td>Individual run with its own shelter, one horse per run</td><td class="price">$700 / month</td></tr>
+            <tr><td>Box stall</td><td>Heated 12 &times; 12 box stall</td><td class="price">$900 / month</td></tr>
+            <tr><td>Box stall with run</td><td>Heated 12 &times; 12 box stall with an attached run</td><td class="price">$1,000 / month</td></tr>
+          </tbody>
+          <tbody>
+            <tr class="group"><th scope="col">Lessons</th><th scope="col">Details</th><th scope="col">Price</th></tr>
+            <tr><td>Semi-private</td><td>Two riders with Kristina Pratt</td><td class="price">$90 / lesson</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Boarding forms are available from the office. Call (303) 422-1762 with any questions.</p>
+    </div>
+  </section>
+
+  <section class="band" id="visit">
+    <div class="wrap visit">
+      <div>
+        <p class="eyebrow">Come see us</p>
+        <h2>Visit the barn</h2>
+        <p>Stop by the office, meet the horses and walk the arena. Please call ahead so someone is there to show you around.</p>
+        <p><a class="btn solid" href="https://www.google.com/maps/search/?api=1&amp;query=14334+W+74th+Dr+Arvada+CO+80007">Get directions</a></p>
+      </div>
+      <div class="card sign">
+        <dl>
+          <div><dt>Address</dt><dd>14334 W. 74th Drive<br>Arvada, Colorado 80007</dd></div>
+          <div><dt>Phone</dt><dd>(303) 422-1762</dd></div>
+          <div><dt>Email</dt><dd>GandJLazyP@gmail.com</dd></div>
+          <div><dt>Owners</dt><dd>George &amp; Jill Pratt</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="mark">G and J Lazy P</span>
+    <span>&copy; 2026 G and J Lazy P &middot; 14334 W. 74th Drive, Arvada, Colorado</span>
+  </div>
+</footer>
