@@ -86,6 +86,10 @@ p { margin: 0 0 1rem; max-width: 65ch; }
 .svc .brand { font: 400 1.6rem/1 var(--display); color: var(--barn); margin-bottom: 0.6rem; }
 .sign.svc p { margin: 0; color: var(--muted); }
 
+a.svc-link { color: var(--ink); text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+a.svc-link:hover, a.svc-link:focus-visible { transform: translateY(-3px); }
+.svc .more { margin-top: auto; padding-top: 0.9rem; font: 500 0.8rem/1 var(--label); letter-spacing: 0.12em; text-transform: uppercase; color: var(--barn); }
+
 /* facility */
 .facility { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
 .facility > * { min-width: 0; }
@@ -120,6 +124,18 @@ footer { padding-block: 2.2rem; background: rgb(20 12 6 / 0.55); font-size: 0.95
 footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; align-items: center; }
 footer .mark { color: var(--on-wood); text-shadow: none; font-size: 1.15rem; }
 
+html, body { overflow-x: clip; }
+@media (max-width: 600px) {
+  .rates-wrap { padding: 0.4rem 1rem; }
+  table { min-width: 0; }
+  thead tr, tr.group th + th { display: none; }
+  tr { display: grid; grid-template-columns: 1fr auto; column-gap: 1rem; border-bottom: 1px solid var(--rule); padding: 0.8rem 0; }
+  tr.group { border-bottom: 2px solid var(--ink); padding: 1.6rem 0 0.6rem; }
+  tbody:first-of-type::before { content: "Boarding"; display: block; font: 500 0.78rem/1 var(--label); letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); padding: 0.6rem 0; border-bottom: 2px solid var(--ink); }
+  td, tr.group th { border: 0; padding: 0; }
+  td:nth-child(2) { grid-column: 1 / -1; order: 3; color: var(--muted); font-size: 0.95rem; margin-top: 0.3rem; }
+  td.price { text-align: right; font-weight: 600; }
+}
 @media (max-width: 760px) {
   .about, .facility, .visit { grid-template-columns: 1fr; }
   .facts { grid-template-columns: 1fr 1fr; }
@@ -209,7 +225,7 @@ footer .mark { color: var(--on-wood); text-shadow: none; font-size: 1.15rem; }
       <p class="eyebrow">What we offer</p>
       <h2>Services</h2>
       <div class="services">
-        <div class="svc sign"><span class="brand" aria-hidden="true">&#x2229;</span><h3>Boarding</h3><p>Heated box stalls, or individual pens with shelter. Boarding forms are available from the office.</p></div>
+        <a class="svc sign svc-link" href="#rates"><span class="brand" aria-hidden="true">&#x2229;</span><h3>Boarding</h3><p>Heated box stalls, or individual pens with shelter. Boarding forms are available from the office.</p><span class="more">See boarding prices &rarr;</span></a>
         <div class="svc sign"><span class="brand" aria-hidden="true">&#x2229;</span><h3>Lessons</h3><p>Lessons with Kristina Pratt, with a focus on Showmanship and Horsemanship for youth and AQHA riders.</p></div>
         <div class="svc sign"><span class="brand" aria-hidden="true">&#x2229;</span><h3>Training</h3><p>Horse training in the indoor arena, outdoor arena and round pen, year round.</p></div>
         <div class="svc sign"><span class="brand" aria-hidden="true">&#x2229;</span><h3>AQHA horses</h3><p>Top breeding of AQHA performance horses. Horses for sale through KP Quarter Horses.</p></div>
