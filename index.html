@@ -1,166 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="G and J Lazy P: family-owned horse boarding, lessons, training and AQHA horses in Arvada, Colorado since 1977.">
 <title>G and J Lazy P</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rye&family=Bitter:wght@500;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Oswald:wght@500&display=swap">
-<style>
-/* Layout: photo-led ranch page. Full-bleed hero of the arena yard, then plank-banded sections
-   (board-and-batten texture) alternating with the barn's own green-roof and bare-cottonwood palette. */
-:root {
-  /* Single deliberate look: dark weathered barn boards behind everything, cream "painted sign" panels for detail. */
-  --wood: #4a3626;          /* fallback under the board texture */
-  --ground: #f1e6d0;        /* painted sign cream */
-  --ink: #2b2118;           /* text on cream */
-  --muted: #6b5a49;
-  --on-wood: #f4ead8;       /* text on bare boards */
-  --on-wood-muted: #d9c7aa;
-  --barn: #2f5a45;
-  --barn-ink: #f3ece0;
-  --hay: #e3a948;
-  --rule: #cdbca2;
-  --placeholder-bg: #f7e3b8;
-  --placeholder-fg: #7a4b05;
-  --display: "Rye", "Bitter", Georgia, serif;
-  --head: "Bitter", Georgia, serif;
-  --body: "Source Serif 4", Georgia, "Times New Roman", serif;
-  --label: "Oswald", "Arial Narrow", sans-serif;
-  color-scheme: dark;
-}
-
-* { box-sizing: border-box; }
-body { background: var(--wood) url("img/wood.jpg") center top / 900px auto repeat; color: var(--on-wood); font: 400 1.0625rem/1.65 var(--body); }
-img { display: block; max-width: 100%; height: auto; }
-a { color: inherit; }
-a:focus-visible, button:focus-visible { outline: 3px solid var(--hay); outline-offset: 3px; }
-
-.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
-.band { padding-block: clamp(3rem, 7vw, 5.5rem); }
-.band { text-shadow: 0 1px 2px rgb(0 0 0 / 0.45); }
-.band p { color: var(--on-wood); }
-.planks { background: rgb(20 12 6 / 0.28); border-block: 3px solid rgb(20 12 6 / 0.55); }
-.green { background: linear-gradient(rgb(34 70 52 / 0.86), rgb(34 70 52 / 0.86)), var(--wood) url("img/wood.jpg") center / 900px auto repeat; color: var(--barn-ink); border-block: 3px solid rgb(20 12 6 / 0.55); }
-.sign { background: var(--ground); color: var(--ink); text-shadow: none; border-radius: 3px; box-shadow: 0 6px 18px rgb(0 0 0 / 0.35), inset 0 0 0 2px rgb(90 60 30 / 0.25); }
-.sign p, .sign td, .sign dd { color: var(--ink); }
-
-.eyebrow { font: 500 0.8rem/1 var(--label); letter-spacing: 0.16em; text-transform: uppercase; color: var(--hay); margin: 0 0 0.9rem; }
-h1, h2, h3 { text-wrap: balance; margin: 0; }
-h2 { font: 800 clamp(1.8rem, 3.6vw, 2.6rem)/1.15 var(--head); margin-bottom: 1rem; }
-h3 { font: 700 1.3rem/1.25 var(--head); margin-bottom: 0.4rem; }
-p { margin: 0 0 1rem; max-width: 65ch; }
-
-.ph { text-shadow: none; background: var(--placeholder-bg); color: var(--placeholder-fg); padding: 0 0.3em; border-radius: 3px; font-style: italic; }
-
-/* nav */
-.top { position: absolute; inset: 0 0 auto; z-index: 2; padding-top: env(safe-area-inset-top, 0px); }
-.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.1rem; flex-wrap: wrap; }
-.mark { font: 400 1.35rem/1 var(--display); color: #fff8ec; text-decoration: none; text-shadow: 0 1px 6px rgb(0 0 0 / 0.5); }
-.top nav { display: flex; gap: 1.4rem; flex-wrap: wrap; }
-.top nav a { font: 500 0.85rem/1 var(--label); letter-spacing: 0.14em; text-transform: uppercase; color: #fff8ec; text-decoration: none; text-shadow: 0 1px 6px rgb(0 0 0 / 0.6); }
-.top nav a:hover { color: #f2c46d; }
-
-/* hero */
-.hero { position: relative; min-height: min(86vh, 760px); display: grid; align-items: end; color: #fff8ec; overflow: hidden; background: #3b3328; }
-.hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
-.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgb(20 14 8 / 0.55) 0%, rgb(20 14 8 / 0) 28%, rgb(20 14 8 / 0.1) 50%, rgb(20 14 8 / 0.82) 100%); }
-.hero .wrap { position: relative; z-index: 1; padding-block: 8rem 3.5rem; width: 100%; }
-.hero .eyebrow { color: #f2c46d; }
-.hero h1 { font: 400 clamp(2.8rem, 8vw, 6rem)/0.95 var(--display); letter-spacing: 0.01em; margin-bottom: 1.1rem; }
-.hero .lede { font-size: clamp(1.1rem, 2vw, 1.3rem); max-width: 38ch; margin-bottom: 1.8rem; }
-.btns { display: flex; gap: 0.8rem; flex-wrap: wrap; }
-.btn { display: inline-block; font: 500 0.9rem/1 var(--label); letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 0.95rem 1.4rem; border: 2px solid currentColor; border-radius: 2px; }
-.btn.solid { background: var(--hay); border-color: var(--hay); color: #24180b; }
-.btn:hover { filter: brightness(1.08); }
-
-/* about */
-.about { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
-.about > * { min-width: 0; }
-.tintype { background: #fffaf1; padding: 12px 12px 2.4rem; box-shadow: 0 10px 30px rgb(40 25 10 / 0.18); transform: rotate(1.6deg); max-width: 420px; justify-self: center; position: relative; }
-.tintype img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-.tintype figcaption { position: absolute; left: 0; right: 0; bottom: 0.7rem; text-align: center; font: italic 400 0.95rem/1 var(--body); color: #5b4a38; }
-.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.6rem; padding-top: 1.4rem; border-top: 2px dashed rgb(244 234 216 / 0.4); }
-.facts dt { font: 500 0.75rem/1 var(--label); letter-spacing: 0.14em; text-transform: uppercase; color: var(--on-wood-muted); margin-bottom: 0.4rem; }
-.facts dd { margin: 0; font: 700 1.1rem/1.3 var(--head); }
-
-/* services */
-.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-top: 2rem; }
-.svc { padding: 1.8rem 1.5rem; display: flex; flex-direction: column; gap: 0.3rem; }
-.svc .brand { font: 400 1.6rem/1 var(--display); color: var(--barn); margin-bottom: 0.6rem; }
-.sign.svc p { margin: 0; color: var(--muted); }
-
-a.svc-link { color: var(--ink); text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
-a.svc-link:hover, a.svc-link:focus-visible { transform: translateY(-3px); }
-.svc .more { margin-top: auto; padding-top: 0.9rem; font: 500 0.8rem/1 var(--label); letter-spacing: 0.12em; text-transform: uppercase; color: var(--barn); }
-
-/* facility */
-.facility { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
-.facility > * { min-width: 0; }
-.facility img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border: 6px solid color-mix(in srgb, var(--barn-ink) 85%, transparent); }
-.green .eyebrow { color: #f2c46d; }
-.checks { list-style: none; padding: 0; margin: 1.2rem 0 0; display: grid; gap: 0.7rem; }
-.checks li { padding-left: 1.6rem; position: relative; }
-.checks li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 0.7rem; height: 0.7rem; border: 2px solid #f2c46d; transform: rotate(45deg); }
-
-/* rates */
-.rates-wrap { overflow-x: auto; margin-top: 1.6rem; padding: 0.6rem 1.2rem; }
-table { width: 100%; border-collapse: collapse; min-width: 480px; }
-th, td { text-align: left; padding: 0.9rem 0.8rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
-th { font: 500 0.78rem/1 var(--label); letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); border-bottom: 2px solid var(--ink); }
-td:first-child { font: 700 1.05rem/1.3 var(--head); }
-tr.group th { padding-top: 2rem; }
-td.price { font-variant-numeric: tabular-nums; white-space: nowrap; }
-.band .note { font-size: 0.95rem; color: var(--on-wood-muted); margin-top: 1rem; }
-
-/* visit */
-.visit { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); }
-.visit > * { min-width: 0; }
-.card { padding: 1.6rem; }
-.card dl { margin: 0; display: grid; gap: 1.1rem; }
-.card dt { font: 500 0.75rem/1 var(--label); letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.35rem; }
-.card dd { margin: 0; font-size: 1.1rem; }
-.hours { width: 100%; min-width: 0; }
-.hours td, .hours th { padding: 0.5rem 0; }
-.hours td:first-child { font: 400 1rem/1.4 var(--body); }
-
-footer { padding-block: 2.2rem; background: rgb(20 12 6 / 0.55); font-size: 0.95rem; color: var(--on-wood-muted); }
-footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; align-items: center; }
-footer .mark { color: var(--on-wood); text-shadow: none; font-size: 1.15rem; }
-
-html, body { overflow-x: clip; }
-@media (max-width: 600px) {
-  .rates-wrap { padding: 0.4rem 1rem; }
-  table { min-width: 0; }
-  thead tr, tr.group th + th { display: none; }
-  tr { display: grid; grid-template-columns: 1fr auto; column-gap: 1rem; border-bottom: 1px solid var(--rule); padding: 0.8rem 0; }
-  tr.group { border-bottom: 2px solid var(--ink); padding: 1.6rem 0 0.6rem; }
-  tbody:first-of-type::before { content: "Boarding"; display: block; font: 500 0.78rem/1 var(--label); letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); padding: 0.6rem 0; border-bottom: 2px solid var(--ink); }
-  td, tr.group th { border: 0; padding: 0; }
-  td:nth-child(2) { grid-column: 1 / -1; order: 3; color: var(--muted); font-size: 0.95rem; margin-top: 0.3rem; }
-  td.price { text-align: right; font-weight: 600; }
-}
-@media (max-width: 760px) {
-  .about, .facility, .visit { grid-template-columns: 1fr; }
-  .facts { grid-template-columns: 1fr 1fr; }
-  .top nav { gap: 1rem; }
-  .tintype { transform: none; }
-}
-@media (prefers-reduced-motion: no-preference) {
-  .hero h1, .hero .lede, .hero .btns { animation: rise 0.8s ease-out both; }
-  .hero .lede { animation-delay: 0.12s; }
-  .hero .btns { animation-delay: 0.24s; }
-  @keyframes rise { from { transform: translateY(14px); } to { transform: none; } }
-}
-
-/* award strip */
-.award { background: rgb(20 12 6 / 0.6); color: var(--on-wood); padding-block: 1rem; font-size: 0.98rem; }
-.award .wrap { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
-.award-badge { font: 500 0.82rem/1 var(--label); letter-spacing: 0.14em; text-transform: uppercase; background: var(--hay); color: #24180b; padding: 0.55rem 0.8rem; border-radius: 2px; }
-.award span:last-child { flex: 1 1 320px; min-width: 0; }
-
-/* family */
-.family { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.2rem; margin-top: 2.5rem; }
-.person { padding: 1.4rem 1.3rem; }
-.person p { margin: 0; font-size: 0.98rem; }
-.visit .btn { margin-top: 0.4rem; text-shadow: none; }
-</style>
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
 
 <header class="top">
   <div class="wrap">
@@ -228,7 +77,7 @@ html, body { overflow-x: clip; }
         <a class="svc sign svc-link" href="#rates"><span class="brand" aria-hidden="true">&#x2229;</span><h3>Boarding</h3><p>Heated box stalls, or individual pens with shelter. Boarding forms are available from the office.</p><span class="more">See boarding prices &rarr;</span></a>
         <div class="svc sign"><span class="brand" aria-hidden="true">&#x2229;</span><h3>Lessons</h3><p>Lessons with Kristina Pratt, with a focus on Showmanship and Horsemanship for youth and AQHA riders.</p></div>
         <div class="svc sign"><span class="brand" aria-hidden="true">&#x2229;</span><h3>Training</h3><p>Horse training in the indoor arena, outdoor arena and round pen, year round.</p></div>
-        <div class="svc sign"><span class="brand" aria-hidden="true">&#x2229;</span><h3>AQHA horses</h3><p>Top breeding of AQHA performance horses. Horses for sale through KP Quarter Horses.</p></div>
+        <a class="svc sign svc-link" href="horses.html"><span class="brand" aria-hidden="true">&#x2229;</span><h3>AQHA horses</h3><p>Top breeding of AQHA performance horses. Horses for sale through KP Quarter Horses.</p><span class="more">See horses for sale &rarr;</span></a>
       </div>
       <p class="note">Also on site: a tack shop with Sale Barn classifieds for boarders, and overnight stabling for the Colorado Stock Horse shows.</p>
     </div>
@@ -301,3 +150,5 @@ html, body { overflow-x: clip; }
     <span>&copy; 2026 G and J Lazy P &middot; 14334 W. 74th Drive, Arvada, Colorado</span>
   </div>
 </footer>
+</body>
+</html>
