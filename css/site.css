@@ -189,3 +189,17 @@ h2.sub { margin: 3rem 0 0; }
   .hero-main::after { background: linear-gradient(180deg, rgb(20 14 8 / 0.5) 0%, rgb(20 14 8 / 0.85) 100%); }
 }
 .owners-card { margin-top: 2.5rem; max-width: 520px; }
+
+/* nailed-on look: a nail head in each corner of every cream sign and photo frame */
+.sign, .tintype {
+  --nail: radial-gradient(circle at 38% 36%, #a89e90 0 0.8px, #5e5245 2px, #2e261d 3.6px, rgb(0 0 0 / 0.35) 4.4px, transparent 5.2px);
+  background-image: var(--nail), var(--nail), var(--nail), var(--nail);
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  background-position: 7px 7px, calc(100% - 7px) 7px, 7px calc(100% - 7px), calc(100% - 7px) calc(100% - 7px);
+}
+.sign { box-shadow: 2px 8px 16px rgb(0 0 0 / 0.45), 0 2px 3px rgb(0 0 0 / 0.35), inset 0 0 0 2px rgb(90 60 30 / 0.25), inset 0 0 22px rgb(120 85 45 / 0.18); }
+.services > .sign:nth-child(odd), .family > .sign:nth-child(odd), .detail > .sign:nth-child(odd), .horses > .sign:nth-child(odd) { rotate: -0.5deg; }
+.services > .sign:nth-child(even), .family > .sign:nth-child(even), .detail > .sign:nth-child(even), .horses > .sign:nth-child(even) { rotate: 0.6deg; }
+.owners-card { rotate: -0.4deg; }
+.visit .card { rotate: 0.4deg; }
