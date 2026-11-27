@@ -70,6 +70,7 @@ p { margin: 0 0 1rem; max-width: 65ch; }
 .about > * { min-width: 0; }
 .tintype { background: #fffaf1; padding: 12px 12px 2.4rem; box-shadow: 0 10px 30px rgb(40 25 10 / 0.18); transform: rotate(1.6deg); max-width: 420px; justify-self: center; position: relative; }
 .tintype img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.tintype video { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #2b2118; }
 .tintype figcaption { position: absolute; left: 0; right: 0; bottom: 0.7rem; text-align: center; font: italic 400 0.95rem/1 var(--body); color: #5b4a38; }
 .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.6rem; padding-top: 1.4rem; border-top: 2px dashed rgb(244 234 216 / 0.4); }
 .facts dt { font: 500 0.75rem/1 var(--label); letter-spacing: 0.14em; text-transform: uppercase; color: var(--on-wood-muted); margin-bottom: 0.4rem; }
