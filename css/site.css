@@ -53,10 +53,12 @@ p { margin: 0 0 1rem; max-width: 65ch; }
 .top nav a:hover { color: #f2c46d; }
 
 /* hero */
-.hero { position: relative; min-height: min(86vh, 760px); display: grid; align-items: end; color: #fff8ec; overflow: hidden; background: #3b3328; }
-.hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
-.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgb(20 14 8 / 0.55) 0%, rgb(20 14 8 / 0) 28%, rgb(20 14 8 / 0.1) 50%, rgb(20 14 8 / 0.82) 100%); }
-.hero .wrap { position: relative; z-index: 1; padding-block: 8rem 3.5rem; width: 100%; }
+.hero { color: #fff8ec; background: #3b3328; }
+.hero-banner { width: 100%; height: auto; border-bottom: 3px solid rgb(20 12 6 / 0.55); }
+.hero-main { position: relative; min-height: min(72vh, 640px); display: grid; align-items: end; overflow: hidden; }
+.hero-main > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; }
+.hero-main::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgb(20 14 8 / 0.1) 0%, rgb(20 14 8 / 0.35) 40%, rgb(20 14 8 / 0.85) 100%); }
+.hero .wrap { position: relative; z-index: 1; padding-block: 5rem 3.5rem; width: 100%; }
 .hero .eyebrow { color: #f2c46d; }
 .hero h1 { font: 400 clamp(2.8rem, 8vw, 6rem)/0.95 var(--display); letter-spacing: 0.01em; margin-bottom: 1.1rem; }
 .hero .lede { font-size: clamp(1.1rem, 2vw, 1.3rem); max-width: 38ch; margin-bottom: 1.8rem; }
