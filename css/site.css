@@ -188,3 +188,4 @@ h2.sub { margin: 3rem 0 0; }
   .hero .wrap { padding-block: 1.8rem 2.5rem; }
   .hero-main::after { background: linear-gradient(180deg, rgb(20 14 8 / 0.5) 0%, rgb(20 14 8 / 0.85) 100%); }
 }
+.owners-card { margin-top: 2.5rem; max-width: 520px; }
